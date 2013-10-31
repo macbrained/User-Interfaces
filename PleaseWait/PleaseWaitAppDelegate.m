@@ -2,9 +2,6 @@
 //  PleaseWaitAppDelegate.m
 //  PleaseWait
 //
-//  Created by Zack Smith on 10/19/10.
-//  Copyright 2010 318. All rights reserved.
-//
 
 #import "PleaseWaitAppDelegate.h"
 
@@ -13,9 +10,9 @@
 @synthesize window;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-	myInstallProgressFile = @"/private/tmp/com.gene.pleasewait.installprogress";
-	myInstallProgressTxt = @"/private/tmp/com.gene.pleasewait.progress";
-	myInstallPhaseTxt = @"/private/tmp/com.gene.pleasewait.phase";
+	myInstallProgressFile = @"/private/tmp/com.pleasewait.installprogress";
+	myInstallProgressTxt = @"/private/tmp/com.pleasewait.progress";
+	myInstallPhaseTxt = @"/private/tmp/com.pleasewait.phase";
 	// Remove any previous txt at run time.
 	[myFileManager removeItemAtPath:myInstallPhaseTxt error:NULL];
 	[myFileManager removeItemAtPath:myInstallProgressTxt error:NULL];

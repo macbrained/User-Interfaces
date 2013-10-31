@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>01F443CC-D188-431A-BDF0-AB4930B3A8D1</string>
+	<key>IDESourceControlProjectName</key>
+	<string>PleaseWait</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>732BA268-CB5B-4557-84AF-2DE9B9033024</key>
+		<string>https://github.com/macbrained/User-Interfaces.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>PleaseWait/PleaseWait.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>732BA268-CB5B-4557-84AF-2DE9B9033024</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/macbrained/User-Interfaces.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>732BA268-CB5B-4557-84AF-2DE9B9033024</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>732BA268-CB5B-4557-84AF-2DE9B9033024</string>
+			<key>IDESourceControlWCCName</key>
+			<string>User-Interfaces</string>
+		</dict>
+	</array>
+</dict>
+</plist>
