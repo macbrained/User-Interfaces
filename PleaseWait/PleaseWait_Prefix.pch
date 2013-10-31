@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'PleaseWait' target in the 'PleaseWait' project
+//
+
+#ifdef __OBJC__
+    #import <Cocoa/Cocoa.h>
+#endif
