@@ -1,0 +1,91 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1187\cocoasubrtf390
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;\red164\green8\blue0;\red0\green61\blue204;\red0\green68\blue254;
+}
+\margl1440\margr1440\vieww17100\viewh17720\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\qc
+
+\f0\b\fs48 \cf2 Basic PleaseWait How-To
+\b0\fs24 \cf0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\cf0 \
+
+\b\fs28 \cf3 The Parts\cf0 \
+
+\b0\fs24 \
+The by default PleaseWait.app monitors the following files:\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\i \cf2 /private/tmp/com.pleasewait.phase  \cf4 <---- Defines the phase name of the task\cf2 \
+/private/tmp/com.pleasewait.progress \cf4 <---- Defines the current progress task info\cf2 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\cf2 /private/tmp/com.pleasewait.installprogress  \cf4 <---- Defines the progress bar percentage (1-100) of the task (barber pole if not defined)\cf0 \
+\
+
+\b NOTE: 
+\b0 You can change the path and file names in 
+\b PleaseWaitAppDelegate.m
+\b0  of the Xcode Project\
+\
+You can modify the 
+\b MainMenu.xib
+\b0  file in the Xcode Project to change the window shape, title, images\'85 as long as you do not delete or change references to the elements for progress.\
+
+\i0 \
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\b\fs28 \cf3 How to Leverage using a Script
+\b0\fs24 \cf0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\cf0 \
+Whether you use shell, python, or AppleScript you'll need to refresh these files for various status updates within your script.  You'll also need to trigger the application to open and exit on demand as required. \
+\
+
+\b EXAMPLE
+\b0 \
+\
+\cf2 #!/bin/sh\
+\
+declare -x PleaseWaitApp="/path/to/PleaseWait.app/Contents/MacOS/PleaseWait"\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\cf2 declare -x pleasewaitPhase="
+\i /private/tmp/com.pleasewait.phase"
+\i0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\cf2 declare -x pleasewaitProgress="
+\i /private/tmp/com.pleasewait.progress"
+\i0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\cf2 declare -x pleasewaitProgress="
+\i /private/tmp/com.pleasewait.installprogress"\
+\
+# BEGIN\
+\
+# Sets the Initial Values \
+echo "Looking for Inappropriate Content"  > $
+\i0 pleasewaitPhase\
+echo "Scanning ~/Pictures/*" > $pleasewaitProgress\
+echo "10" > $pleasewaitProgress\
+\
+
+\i # Launches the UI Application\
+open $
+\i0 PleaseWaitApp\
+\
+
+\i # Changes the Values \
+echo "Looking for Inappropriate Content"  > $
+\i0 pleasewaitPhase\
+echo "Scanning ~/Documents/*" > $pleasewaitProgress\
+echo "20" > $pleasewaitProgress\
+\
+# Exits UI Application When Complete\
+killall PleaseWait\
+\
+#END\cf0 \
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+\cf0 {{\NeXTGraphic Screen Shot 2013-11-01 at 7.28.56 AM.png \width12920 \height9800
+}¬}}

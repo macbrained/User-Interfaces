@@ -1,0 +1,53 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1187\cocoasubrtf390
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;\red164\green8\blue0;\red0\green61\blue204;}
+\margl1440\margr1440\vieww17100\viewh17720\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\qc
+
+\f0\b\fs48 \cf2 Basic ProcessComplete How-To
+\b0\fs24 \cf0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\cf0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\b\fs28 \cf3 The Parts\cf0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\i\b0\fs24 \cf0 \
+You can modify the 
+\b MainMenu.xib
+\b0  file in the Xcode Project to change the window shape, text, images.
+\i0 \
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\b\fs28 \cf3 How to Leverage using a Script
+\b0\fs24 \cf0 \
+\
+Whether you use shell, python, or AppleScript you'll need to trigger the application to open and exit on demand as required. \
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\b \cf0 EXAMPLE
+\b0 \
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\cf2 #!/bin/sh\
+\
+declare -x ProcessCompleteApp="/path/to/ProcessComplete.app/Contents/MacOS/ProcessComplete"\
+
+\i \
+# BEGIN
+\i0 \
+\
+
+\i # Launches the UI Application\
+open $
+\i0 ProcessCompleteApp\
+\
+# Exits UI Application When Complete\
+killall ProcessComplete\
+\
+#END\cf0 \
+\
+}
